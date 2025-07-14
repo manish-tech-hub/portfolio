@@ -1,0 +1,45 @@
+.logo-shower-container {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: visible;
+  z-index: -1;
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Animation keyframes for falling effect */
+@keyframes fall {
+  0% {
+    transform: translateY(-60px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
+
+.falling-icon {
+  position: absolute;
+  top: -50px;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  pointer-events: none;
+  user-select: none;
+  text-shadow: 0 0 5px currentColor,
+               0 0 10px currentColor,
+               0 0 15px currentColor;
+  filter: brightness(0.8) contrast(1.6);
+}

@@ -1,0 +1,220 @@
+/* ===================== Navbar ===================== */
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color:var(--color-bg); 
+  padding: 20px;
+  color:var(--color-text);
+  font-family: Arial, sans-serif;
+  border-radius: 10px;
+  z-index: 100;
+
+}
+
+/* ===================== Nav Right Section ===================== */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* ===================== Theme Toggle Switch ===================== */
+.theme-switch {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  border-radius: 15px;
+  cursor: pointer;
+  overflow: hidden;
+  /* background: transparent; */
+}
+
+.switch-track {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10 10px;
+  box-sizing: border-box;
+  z-index: 2;
+  background-color: rgba(238, 238, 238, 0.5);
+}
+
+.light-icon,
+.dark-icon {
+  font-size: 18px;
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+  z-index: 2; /* ensure icons are above the background and handle */
+  position: relative;
+}
+
+.theme-switch.light .light-icon,
+.theme-switch.dark .dark-icon {
+  opacity: 1;
+}
+
+.switch-handle {
+  position: absolute;
+  top: 4px;
+  width: 27px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #f8dcdc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 3;
+}
+
+.theme-switch.light .switch-handle {
+  transform: translateX(32px);
+  background-color: #333;
+}
+
+.theme-switch.dark .switch-handle {
+  transform: translateX(3px);
+  background-color:#f8dcdc;
+}
+
+/* ===================== Nav Links (Desktop) ===================== */
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 50px;
+  flex-grow: 1;
+  padding-left: 10px;
+  padding-right: 25px;
+}
+
+.nav-links li a {
+  position: relative;
+  color:var(--color-text);
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background-color:var(--color-primary-hover);
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color:var(--color-primary-hover);
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* ===================== Hamburger Icon (Mobile) ===================== */
+.hamburger {
+  font-size: 2rem;
+  color:var(--color-text);
+  cursor: pointer;
+  display: none;
+}
+
+/* ===================== Sidebar (Mobile Menu) ===================== */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 70%;
+  height: 100%;
+  background-color:#282c34;
+  z-index: 999;
+  padding: 30px 20px;
+  transition: left 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 5px 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar-links {
+  list-style: none;
+  padding: 0;
+  margin-top: 40px;
+}
+
+.sidebar-links li {
+  margin-bottom: 20px;
+}
+
+.sidebar-links a {
+  color: white;
+  font-size: 1.3rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.sidebar-links a:hover {
+  color: var(--heading-color);
+}
+
+.sidebar-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background-color:var(--heading-color);
+  transition: width 0.3s ease;
+}
+
+.sidebar-links a:hover::after {
+  width: 100%;
+}
+
+/* ===================== Close Button ===================== */
+.close-btn {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* ===================== Responsive ===================== */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+  
+  .nav-right {
+    gap: 15px;
+  }
+  
+  .theme-switch {
+    width: 53px;
+    height: 32px;
+  }
+  
+  .theme-switch.light .switch-handle {
+    transform: translateX(26px);
+  }
+}

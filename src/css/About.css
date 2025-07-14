@@ -1,0 +1,41 @@
+.about {
+  padding: 60px 80px;
+  background-color:var(--color-bg); 
+  color: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.7;
+}
+
+.about h2 {
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+  color:var(--heading-color);
+  border-left: 4px solid var(--heading-color);
+  padding-left: 12px;
+  text-align: left;
+}
+
+.about p {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  color:var(--color-text);
+}
+
+.about strong {
+  color: var(--heading-color);
+}
+
+/* ✅ Responsive Fix */
+@media (max-width: 768px) {
+  .about {
+    padding: 40px 16px;
+  }
+
+  .about h2 {
+    font-size: 1.8rem;
+  }
+
+  .about p {
+    font-size: 1rem;
+  }
+}
