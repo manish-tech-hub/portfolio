@@ -136,4 +136,7 @@
   .contact-form {
     width: 100%;
   }
+  .form-status{
+    padding: 3px;
+  }
 }

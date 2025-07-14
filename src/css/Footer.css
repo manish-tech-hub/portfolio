@@ -27,7 +27,7 @@
 }
 
 .footer__socials a:hover {
-  color:var(--heading-color);
+  color:var(--color-text);
 }
 
 .footer__copyright {
