@@ -1,6 +1,6 @@
 .footer {
   background-color:var(--color-bg);
-  color: #aaa;
+  color:var(--color-text);
   text-align: center;
   padding: 80px 20px 25px;
   font-family: Arial, sans-serif;
@@ -22,7 +22,7 @@
 }
 
 .footer__socials a {
-  color:var(--color-text);
+  color:var(--heading-color);
   transition: color 0.3s ease;
 }
 
