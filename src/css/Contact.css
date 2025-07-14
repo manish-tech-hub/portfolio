@@ -107,7 +107,19 @@
 .envelope-svg.animate #flap {
   transform: rotateX(180deg);
 }
+.form-status {
+  margin-top: 15px;
+  font-weight: 500;
+  color: green;
+  background: #eaffea;
+  padding: 10px;
+  border-radius: 8px;
+}
 
+.form-status.error {
+  color: red;
+  background: #ffeaea;
+}
 /* Responsive Fix */
 @media (max-width: 700px) {
   .contact-container {

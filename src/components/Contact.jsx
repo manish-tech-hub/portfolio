@@ -1,9 +1,10 @@
-import React from "react";
+import React,{useState} from "react";
 import "../css/Contact.css";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 const Contact = () => {
   const form = useRef()
+  const [statusMessage, setStatusMessege]=useState("")
   const sendMail=(e)=>{
     e.preventDefault()
     emailjs.sendForm(
@@ -14,12 +15,14 @@ const Contact = () => {
     ).then(
         (response) => {
           console.log("SUCCESS!", response.status, response.text);
-          alert("Message sent successfully!");
+          setStatusMessege("✅Message sent successfully!");
           form.current.reset();
+          setTimeout(()=>setStatusMessege(""),1000)
         },
         (error) => {
-          console.error("FAILED...", error);
-          alert("Failed to send message.");
+          setStatusMessege(" ❌ Failed to send message.");
+          setTimeout(()=>setStatusMessege(""),3000)
+          console.log(error)
         }
       );
   }
@@ -77,6 +80,7 @@ const Contact = () => {
         <form ref={form} onSubmit={sendMail}
           className="contact-form"
         >
+          {statusMessage && <p className="form-status">{statusMessage}</p>}
           <label htmlFor="name">Name</label>
           <input type="text" id="name" name="client_name" required placeholder="Your Name" />
 
