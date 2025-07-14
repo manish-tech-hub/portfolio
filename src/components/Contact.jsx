@@ -1,7 +1,28 @@
 import React from "react";
 import "../css/Contact.css";
-
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
 const Contact = () => {
+  const form = useRef()
+  const sendMail=(e)=>{
+    e.preventDefault()
+    emailjs.sendForm(
+      "service_928kt7e",
+      "template_4gn55jk",
+      form.current,
+      "wMwmmID-TG9XUftRk"
+    ).then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          alert("Message sent successfully!");
+          form.current.reset();
+        },
+        (error) => {
+          console.error("FAILED...", error);
+          alert("Failed to send message.");
+        }
+      );
+  }
   return (
     <section id="contact" className="contact-section">
         <h2>Get In Touch</h2>
@@ -53,19 +74,17 @@ const Contact = () => {
         </div>
 
         {/* Right side: Contact form */}
-        <form
+        <form ref={form} onSubmit={sendMail}
           className="contact-form"
-          action="https://formspree.io/f/your-form-id" // Replace with your Formspree ID
-          method="POST"
         >
           <label htmlFor="name">Name</label>
-          <input type="text" id="name" name="name" required placeholder="Your Name" />
+          <input type="text" id="name" name="client_name" required placeholder="Your Name" />
 
           <label htmlFor="email">Email</label>
           <input
             type="email"
             id="email"
-            name="_replyto"
+            name="client_email"
             required
             placeholder="Your Email"
           />
