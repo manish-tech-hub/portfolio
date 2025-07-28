@@ -31,7 +31,7 @@ const projects = [
       
     ],
     liveDemo: "https://restro-frontend-gold.vercel.app/home",
-    repo: "https://github.com/manish-tech-hub/restaurant-project",
+    repo: "https://github.com/manish-tech-hub/Resturent-management",
   },
   {
     id: 3,
@@ -46,7 +46,7 @@ const projects = [
       "Clean and modern UI",
     ],
     liveDemo: "https://manishpasman-portfolio.vercel.app/",
-    repo: "https://github.com/manish-tech-hub/my-portfolio",
+    repo: "https://github.com/manish-tech-hub/portfolio",
   },
 ];
 
