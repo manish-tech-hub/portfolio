@@ -15,7 +15,7 @@ const projects = [
       "Order tracking and admin dashboard",
       
     ],
-    liveDemo: "https://your-live-demo-url.com",
+    liveDemo: "https://github.com/manish-tech-hub/projectFruit ",
     repo: "https://github.com/manish-tech-hub/projectFruit",
   },
   {
@@ -30,7 +30,7 @@ const projects = [
       "Dynamic cart and order system",
       
     ],
-    liveDemo: "https://your-live-demo-restaurant.com",
+    liveDemo: "https://restro-frontend-gold.vercel.app/home",
     repo: "https://github.com/manish-tech-hub/restaurant-project",
   },
   {
@@ -45,7 +45,7 @@ const projects = [
       "Responsive design for mobile & desktop",
       "Clean and modern UI",
     ],
-    liveDemo: "https://your-portfolio.com",
+    liveDemo: "https://manishpasman-portfolio.vercel.app/",
     repo: "https://github.com/manish-tech-hub/my-portfolio",
   },
 ];
@@ -105,7 +105,7 @@ const Projects = () => {
                 ))}
               </ul>
               <div className="project-links">
-                {/* <a href={liveDemo} target="_blank" rel="noopener noreferrer">Live Demo</a> */}
+                <a href={liveDemo} target="_blank" rel="noopener noreferrer">Live Demo</a>
                 <a href={repo} target="_blank" rel="noopener noreferrer">GitHub Repo</a>
               </div>
             </motion.div>
